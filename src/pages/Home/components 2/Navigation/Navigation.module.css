@@ -1,0 +1,23 @@
+.nav{
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      border-radius: 4px;
+      background-color: rgb(82, 121, 121);
+}
+.navLink{
+   text-decoration: none;
+   color: azure;
+   margin-right: 15px;
+   padding: 4px;
+   border-radius: 8px;
+}   
+.navLink:last-child{
+   margin-right: 0px;
+}
+.navLink:hover{
+   color: blanchedalmond;
+   background-color: rgb(93, 135, 124);
+}

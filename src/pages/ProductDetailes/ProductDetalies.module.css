@@ -1,0 +1,21 @@
+.ul{
+   list-style: none;
+   padding: 0px;
+
+}
+.li{
+   margin-bottom: 8px;
+}
+.li:last-child{
+   margin-bottom: 0px;
+}
+.link{
+   padding: 8px;
+ text-decoration: none;
+   color: azure;
+   border-radius: 4px;
+}
+.link:hover{
+   color: blanchedalmond;
+   background-color: rgb(93, 135, 124);
+}
