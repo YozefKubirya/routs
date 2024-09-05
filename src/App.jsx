@@ -1,20 +1,23 @@
-
+import { Suspense, lazy } from 'react';
 import './App.css'
 import { Route,Routes, } from 'react-router-dom'
 import Navigation from './components/Navigation/Navigation'
-import Home from './pages/Home/Home' 
-import About from './pages/About/About'
-import Product from './pages/Product/Product'
-import NotFound from './pages/NotFound/NotFound'
-import ProductDetailes from './pages/ProductDetailes/ProductDetailes'
-import BankInfo from './components/BankInfo/BankInfo'
-import PaymentReceipte from './components/PaymentReceipte/PaymentReceipte'
+ 
+const Home= lazy(()=>import('./pages/Home/Home'))
+const About= lazy(()=>import('./pages/About/About'))
+const Product= lazy(()=>import('./pages/Product/Product'))
+const NotFound= lazy(()=>import('./pages/NotFound/NotFound'))
+const ProductDetailes= lazy(()=>import('./pages/ProductDetailes/ProductDetailes'))
+const BankInfo= lazy(()=>import('./components/BankInfo/BankInfo'))
+const PaymentReceipte= lazy(()=>import('./components/PaymentReceipte/PaymentReceipte'))
+
 function App() {
 
 
   return (
     <>
     <Navigation/>
+    <Suspense fallback={<>Loading........</>}>
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/about' element={<About/>}/>
@@ -28,6 +31,7 @@ function App() {
       <Route path='*' element={<NotFound/>}/>
      
     </Routes>  
+    </Suspense>
     </>
   )
 }
